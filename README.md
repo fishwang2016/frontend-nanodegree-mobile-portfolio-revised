@@ -29,5 +29,12 @@ You might find the FPS Counter/HUD Display useful in Chrome developer tools desc
 
      0. The general concept of optimizing the main.js file for  pizza.html is to try to limit reading and writing the DOM inside the loop. 
      1. Open the local file using Chrome and check  timeline in Google Dev to check the indicators of the 60FPS.
-     2. The changes are commemted with "** prefix in the comment line" in the main.js file
+     2. The changes are commemted with "** prefix in the comment line" in the main.js file.
+     3. I found adding following lines in the .mover make the whole page slower, so I didn't added it in the css file.
+                    {
+                     transform: -webkit-transform: translateZ(0);
+					 transform: translateZ(0);
+				     -webkit-backface-visibility: hidden;
+					 backface-visibility: hidden;
+					}
 
