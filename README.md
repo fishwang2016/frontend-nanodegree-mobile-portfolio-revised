@@ -6,29 +6,20 @@ To get started, check out the repository and inspect the code.
 
 ### Getting started
 
+### Running this project requires a modern browser as there are some features that only in the latest browsers. If you don't know what to choose, try Google Chrome.
+### Then open index.html, you can view the content.
+
 ####Part 1: Optimize PageSpeed Insights score for index.html
+    I didn't follow the steps using local server in this original README.md to optimize. In stead I uploaded all the files to a remote serve to do the test.
+    
+     Part 1 can pass 90 in google PageSpeed insights after optimization.
 
-Some useful tips to help you get started:
+     0. Before optimizing the page, use google pagespeed to check and can find some suggestions on what to improve. 
 
-1. Check out the repository
-1. To inspect the site on your phone, you can run a local server
+     1. The general concept of optimizing the index.html is to inline necessary CSS (shortening CRP), put the link of the additional css to the end of html,async the google analysis javascript codes, inline google fonts, and reduce the size of the pictures.
 
-  ```bash
-  $> cd /path/to/your-project-folder
-  $> python -m SimpleHTTPServer 8080
-  ```
+     2. Check the google PageSpeed score. Open the pagespeed link ,and input the website link then can see the score is over 90.
 
-1. Open a browser and visit localhost:8080
-1. Download and install [ngrok](https://ngrok.com/) to make your local server accessible remotely.
-
-  ``` bash
-  $> cd /path/to/your-project-folder
-  $> ngrok http 8080
-  ```
-
-1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
-
-Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
 ####Part 2: Optimize Frames per Second in pizza.html
 
@@ -36,20 +27,7 @@ To optimize views/pizza.html, you will need to modify views/js/main.js until you
 
 You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
 
-### Optimization Tips and Tricks
-* [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
-* [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
-* [Optimizing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path.html "optimize the crp!")
-* [Avoiding Rendering Blocking CSS](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css.html "render blocking css")
-* [Optimizing JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript.html "javascript")
-* [Measuring with Navigation Timing](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/measure-crp.html "nav timing api"). We didn't cover the Navigation Timing API in the first two lessons but it's an incredibly useful tool for automated page profiling. I highly recommend reading.
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/eliminate-downloads.html">The fewer the downloads, the better</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer.html">Reduce the size of text</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization.html">Optimize images</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching.html">HTTP caching</a>
+     0. The general concept of optimizing the main.js file for  pizza.html is to try to limit reading and writing the DOM inside the loop. 
+     1. Open the local file using Chrome and check  timeline in Google Dev to check the indicators of the 60FPS.
+     2. The changes are commemted with "** prefix in the comment line" in the main.js file
 
-### Customization with Bootstrap
-The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstrap</a> framework. All custom styles are in `dist/css/portfolio.css` in the portfolio repo.
-
-* <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
-* <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
