@@ -546,7 +546,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var s = 256;
   var elem;
   var movingPizzas1 = document.querySelector("#movingPizzas1");
-  for (var i = 0; i < 200; i++) {
+  for (var i = 0; i < 24; i++) {  //make only 24 necessary moving pizzas on the screen
     elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
